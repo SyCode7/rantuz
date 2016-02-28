@@ -22,7 +22,7 @@ public class XmlParser {
 	
 	public static void main(String[] args) throws SAXException, IOException {
 		
-		File xmlFile = new File ("C:\\Users\\Kennedy.Torkura\\Dropbox\\Java\\exercises\\staff.xml");
+		File xmlFile = new File ("staff.xml");
 		XmlParser test = new XmlParser();
 
 		
