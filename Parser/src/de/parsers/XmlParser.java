@@ -24,7 +24,7 @@ public class XmlParser {
 		XmlParser test = new XmlParser();
 		test.parseXml(xmlFile);
 
-//		testing 2FA
+//		testing MFA
 //		int n = 1;
 //		if (n == 1){
 //		String in = test.parseXml(xmlFile);
