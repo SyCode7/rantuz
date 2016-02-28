@@ -3,6 +3,7 @@ package de.parsers;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.InputStream;
 import java.io.Reader;
@@ -12,7 +13,8 @@ import org.json.XML;
 
 public class UsingJSONJava {
 
-	static File xmlFile = new File ("C:\\Users\\Kennedy.Torkura\\Dropbox\\Java\\exercises\\staff.xml");
+
+	static File xmlFile = new File ("staff.xml");
 	public static int PRETTY_PRINT_INDENT_FACTOR = 4;
 	public static String TEXT_XML_STRING = " <company> \n " +
 	" <staff id= 1001>  \n " +
@@ -32,9 +34,9 @@ public class UsingJSONJava {
 	
 	
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		
-		try {
+		
 			
 			FileReader is = new FileReader(xmlFile);
 			BufferedReader reader = new BufferedReader(is);
@@ -45,10 +47,7 @@ public class UsingJSONJava {
 		JSONObject xmlJSONObj = XML.toJSONObject(TEXT_XML_STRING);
 		String jsonPrettyPrint = xmlJSONObj.toString(PRETTY_PRINT_INDENT_FACTOR);
 		System.out.println(jsonPrettyPrint);
-//			}
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
+
 		
 		
 		}
