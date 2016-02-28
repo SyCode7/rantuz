@@ -17,10 +17,10 @@ import org.xml.sax.SAXException;
 
 public class XmlParser {
 	
-	static File inputFile = new File ("C:/Users/Kennedy.Torkura/Dropbox/Java/exercises/xmltojson.json");
+	static File inputFile = new File ("xmltojson.json");
 	public static void main(String[] args) throws SAXException, IOException {
 		
-		File xmlFile = new File ("C:\\Users\\Kennedy.Torkura\\Dropbox\\Java\\exercises\\staff.xml");
+		File xmlFile = new File ("staff.xml");
 		XmlParser test = new XmlParser();
 		test.parseXml(xmlFile);
 
