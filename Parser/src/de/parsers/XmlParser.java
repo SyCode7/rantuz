@@ -1,16 +1,13 @@
 package de.parsers;
 
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.Writer;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-import org.apache.commons.io.FileUtils;
+import org.json.simple.JSONObject;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -20,18 +17,20 @@ import org.xml.sax.SAXException;
 
 public class XmlParser {
 	
+	static File inputFile = new File ("C:/Users/Kennedy.Torkura/Dropbox/Java/exercises/xmltojson.json");
 	public static void main(String[] args) throws SAXException, IOException {
 		
 		File xmlFile = new File ("C:\\Users\\Kennedy.Torkura\\Dropbox\\Java\\exercises\\staff.xml");
 		XmlParser test = new XmlParser();
+		test.parseXml(xmlFile);
 
+//		
+//		int n = 1;
+//		if (n == 1){
+//		String in = test.parseXml(xmlFile);
+//		System.out.println(in);
 		
-		int n = 1;
-		if (n == 1){
-		String in = test.parseXml(xmlFile);
-		System.out.println(in);
-		
-		}
+//		}
 //		BufferedWriter writer = new BufferedWriter(in);
 		
 //		String jsonTest = String.copyValueOf(test.parseXml(xmlFile));
@@ -39,9 +38,8 @@ public class XmlParser {
 		
 	}	
 		
-	public String parseXml (File file) throws SAXException, IOException {
-		
-		
+	public void parseXml (File file) throws SAXException, IOException {
+				
 
 	try {
 				
@@ -50,35 +48,62 @@ public class XmlParser {
 		Document doc = dBuilder.parse(file);
 		doc.getDocumentElement().normalize();
 		
-		System.out.println( "********** Plain text output ****************");
+		System.out.println( "********** JSON output ****************");
 		System.out.println("Root element : " + doc.getDocumentElement().getNodeName()) ;
 		
 		NodeList nList = doc.getElementsByTagName("staff");
-		System.out.println("---------------------------------------------");
 		
-		for (int temp = 0; temp < nList.getLength(); temp++) {
+		System.out.println("---------------------------------------------");
+
+		int temp = 0;
+		Node nNode = nList.item(temp);
+		System.out.println("Number of nodes --> " + nList.getLength());
+		System.out.println("\" " +  doc.getDocumentElement().getNodeName() + "\" : {") ;
+		System.out.println("\" " + nNode.getNodeName() + "\" : [");
+		
+		for (temp = 0; temp < nList.getLength(); temp++) {
 			
-			Node nNode = nList.item(temp);
-			
-			System.out.println("\nCurrent Element : " + nNode.getNodeName());
 			
 			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 				
 				
 				Element eElement = (Element) nNode;
-				System.out.println("Staff id : " + eElement.getAttribute("id"));
-				System.out.println("First Name : " + eElement.getElementsByTagName("firstname").item(0).getTextContent());
-				System.out.println("Last Name : " + eElement.getElementsByTagName("lastname").item(0).getTextContent());
-				System.out.println("Nickname : " + eElement.getElementsByTagName("nickname").item(0).getTextContent());
-				System.out.println("Salary : " + eElement.getElementsByTagName("salary").item(0).getTextContent());
+//				System.out.println("Staff id : " + eElement.getAttribute("id"));
+//				System.out.println("First Name : " + eElement.getElementsByTagName("firstname").item(0).getTextContent());
+//				System.out.println("Last Name : " + eElement.getElementsByTagName("lastname").item(0).getTextContent());
+//				System.out.println("Nickname : " + eElement.getElementsByTagName("nickname").item(0).getTextContent());
+//				System.out.println("Salary : " + eElement.getElementsByTagName("salary").item(0).getTextContent());
+
+				JSONObject obj = new JSONObject();
+//				obj.put(nNode.getNodeName(), null);
+				
+				obj.put("id", eElement.getAttribute("id"));
+				obj.put("firstname", eElement.getElementsByTagName("firstname").item(0).getTextContent());
+				obj.put("lastname", eElement.getElementsByTagName("lastname").item(0).getTextContent());
+				obj.put("nickname", eElement.getElementsByTagName("nickname").item(0).getTextContent());
+				obj.put("salary", eElement.getElementsByTagName("salary").item(0).getTextContent());
+
+				
+				
+				System.out.println(obj);
+				
+				
+//				Map<String,String> list = new HashMap<String,String>();
+//				list.put("id  : ", eElement.getAttribute("id"));
 			}
+			
+//			FileWriter out = new FileWriter(inputFile);
+//			BufferedWriter writer = new BufferedWriter(out);
+//			while (writer.write(str);) {
+//				
+//			}
 		}
 		
 			
 		} catch (ParserConfigurationException e) {
 			e.printStackTrace();
 		}
-	return parseXml(file);
+//	return parseXml(file);
 		
 	}
 

@@ -20,5 +20,17 @@
 			<attribute name="maven.scope" value="compile"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Kennedy.Torkura/devops/json-simple-1.1.1-sources.jar"/>
+	<classpathentry kind="lib" path="C:/apache-maven-3.2.1/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar" sourcepath="C:/apache-maven-3.2.1/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="com.googlecode.json-simple"/>
+			<attribute name="maven.artifactId" value="json-simple"/>
+			<attribute name="maven.version" value="1.1.1"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Kennedy.Torkura/devops/json-java/json-20160212.jar" sourcepath="C:/Users/Kennedy.Torkura/devops/json-java/json-20160212-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Kennedy.Torkura/devops/json-java/json-20160212-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
