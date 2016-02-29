@@ -17,7 +17,7 @@ import org.xml.sax.SAXException;
 
 public class XmlParser {
 	
-	static File inputFile = new File ("xmltojson.json");
+	static File inputFile = new File ("staff.xml");
 	public static void main(String[] args) throws SAXException, IOException {
 		
 		File xmlFile = new File ("staff.xml");
