@@ -30,5 +30,12 @@
 	<classpathentry kind="lib" path="C:/Users/Kennedy.Torkura/devops/jakarta-commons-collections.jar/jakarta-commons-collections.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Kennedy.Torkura/devops/apache-commons/commons-beanutils-1.9.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Kennedy.Torkura/devops/apache-commons/commons-beanutils-1.9.2-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Kennedy.Torkura/devops/jackson-databind-2.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Kennedy.Torkura/devops/jackson-databind-2.7.2-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Kennedy.Torkura/devops/stax2-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Kennedy.Torkura/devops/jackson-annotations-2.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Kennedy.Torkura/devops/jackson-dataformat-xml-2.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Kennedy.Torkura/devops/jackson-core-2.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Kennedy.Torkura/devops/jackson-module-jaxb-annotations-2.7.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
